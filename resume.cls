@@ -31,7 +31,7 @@
 \RequirePackage{times}
 \RequirePackage[T1]{fontenc}
 
-\RequirePackage[tmargin=1in,bmargin=1in]{geometry}
+\RequirePackage[tmargin=.75in,bmargin=.75in]{geometry}
 
 \definecolor{rulestartcolor}{rgb}{0,0,0}
 \definecolor{ruleendcolor}{rgb}{0.4,0.4,0.4}
@@ -152,3 +152,16 @@
   \end{tabularx}%
 }%
 
+% Version of Affiliation that allows for 3 lines
+%
+%  Usage:
+% \bigaffiliation[title]{institution}{years}{office}
+\newcommand{\bigaffiliation}[4][]{%
+  \goodbreak\vspace{\secskip}\par\noindent\begin{tabularx}{\linewidth}{Xr}%
+    {\bfseries #2} & \textit{#3}%
+    \ifthenelse{\equal{#1}{}}{}{%
+      \\ \textbf{#4}%
+    }%
+    \\ \textbf{#1}
+  \end{tabularx}%
+}%
