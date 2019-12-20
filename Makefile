@@ -1,0 +1,2 @@
+resume:
+	pdflatex r.tex
