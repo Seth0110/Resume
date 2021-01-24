@@ -1,2 +1,2 @@
 resume:
-	pdflatex r.tex
+	pdflatex r.tex && rm r.aux r.log
